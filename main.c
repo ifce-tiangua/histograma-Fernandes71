@@ -11,6 +11,10 @@ void preenche_histrograma(char *h[], int valor, int categoria)
 
 void imprimir_histograma(char *h[], int valores[], int categorias)
 {
+    if(categorias==0){
+        printf("vazio");
+        return;
+    }
     for (int i = 0; i < categorias; i++)
     {
         printf("%d ", valores[i]);
@@ -48,5 +52,10 @@ int main()
     }
 
     imprimir_histograma(histrograma, valores, categorias);
+
+    for(int i = 0; i<categorias ;i++){
+        free(histrograma[i]);
+    }
+
     return 0;
 }
